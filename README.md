@@ -75,6 +75,9 @@ def addImages(img1, img2):
 </figure>
 <p align="center"><i>Результат 1</i></p><br>
 
+<figure>
+  <p align="center"><img src="IMAGES/add_subtract_pic.jpg"></p>
+</figure>
 
 <b>Вычитание изображений</b>
 
