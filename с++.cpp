@@ -1,4 +1,4 @@
-#include <opencv2/core.hpp>
+#include <opencv2/core.hpp> 
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
@@ -7,6 +7,7 @@
 using namespace cv;
 using namespace std;
 
+// сложение двух чисел в Uint8 (с учетом переполнение)
 unsigned char sumUint8(unsigned char a_uchar, unsigned char b_uchar) {
     int a_int = a_uchar;
     int b_int = b_uchar;
@@ -26,7 +27,7 @@ unsigned char sumUint8(unsigned char a_uchar, unsigned char b_uchar) {
     return z_uchar;
 }
 
-
+// вычитание двух чисел в Uint8 (с учетом переполнение)
 unsigned char differenceUint8(unsigned char a_uchar, unsigned char b_uchar) {
     int a_int = a_uchar;
     int b_int = b_uchar;
@@ -48,12 +49,12 @@ unsigned char differenceUint8(unsigned char a_uchar, unsigned char b_uchar) {
 
 Mat addImages(Mat& img1, Mat& img2) {
     resize(img2, img2, Size(img1.cols, img1.rows));
-    Mat img_add = Mat::zeros(img1.rows, img1.cols, CV_8UC3);
+    Mat img_add = Mat::zeros(img1.rows, img1.cols, CV_8UC3); //Изображения сложения (изначально оно черная)
 
     for (int i = 0; i < img_add.rows - 1; i++) {
         for (int j = 0; j < img_add.cols - 1; j++) {
 
-            img_add.at<Vec3b>(i, j)[0] = sumUint8(img1.at<Vec3b>(i, j)[0], img2.at<Vec3b>(i, j)[0]);
+            img_add.at<Vec3b>(i, j)[0] = sumUint8(img1.at<Vec3b>(i, j)[0], img2.at<Vec3b>(i, j)[0]); // обращение к элементу матрицы img_add цвета B
             img_add.at<Vec3b>(i, j)[1] = sumUint8(img1.at<Vec3b>(i, j)[1], img2.at<Vec3b>(i, j)[1]);
             img_add.at<Vec3b>(i, j)[2] = sumUint8(img1.at<Vec3b>(i, j)[2], img2.at<Vec3b>(i, j)[2]);
         }
