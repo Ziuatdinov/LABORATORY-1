@@ -3,11 +3,6 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
-#include <ctime>
-#include <vector>
-#include <fstream>
-
-
 
 using namespace cv;
 using namespace std;
