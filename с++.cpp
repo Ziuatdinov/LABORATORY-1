@@ -84,11 +84,6 @@ Mat subtractImages(Mat& img1, Mat& img2) {
 
 int main()
 {
-    unsigned int start;
-    unsigned int end;
-    vector <float> test;
-    ofstream excel;
-    bool flag = true;
     Mat img_add;
     Mat img_subtract;
     Mat img_show;
@@ -98,18 +93,11 @@ int main()
     Mat img1 = imread("Images/ford.jpg");
     Mat img2 = imread("Images/img1.jpg");
 
-    for (int i = 0; i < 30; i++) {
-        start = clock();
-        img_add = addImages(img1, img2);
-        img_subtract = subtractImages(img1, img2);
-        end = clock();
-        test.push_back((float)(end - start) / 1000);
-    }
     img_add = addImages(img1, img2);
     img_subtract = subtractImages(img1, img2);
 
-    bool flagAdd = true; // ôëàã ñëîæåíèÿ
-    bool flagSubtract = true; // ôëàã âû÷èòàíèÿ
+    bool flagAdd = true; // Ã´Ã«Ã Ã£ Ã±Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¿
+    bool flagSubtract = true; // Ã´Ã«Ã Ã£ Ã¢Ã»Ã·Ã¨Ã²Ã Ã­Ã¨Ã¿
 
     while (1) {
 
